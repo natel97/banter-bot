@@ -12,13 +12,33 @@ steps:
     image: plugins/docker
     settings:
       repo: registry.nathaniallubitz.com/bots/banterbot
-      tags: latest
-      build_args_from_env:
-        - TOKEN
+      auto_tag: true
+    build_args_from_env:
+      - TOKEN
+    secrets: [TOKEN]
     when:
       event:
         - push
 
+  - name: Deploy to Kubernetes
+    image: quay.io/honestbee/drone-kubernetes
+    deployment: banter-bot
+    container: banterbot
+    repo: registry.nathaniallubitz.com/bots/banterbot
+    kubernetes_server: https://kube.nathaniallubitz.com
+    tag: latest
+
 trigger:
   branch:
     - main
+# ---
+# kind: pipeline
+# name: deploy
+
+#   - name: Deploy to Kubernetes
+#     image: quay.io/honestbee/drone-kubernetes
+#     deployment: registry.nathaniallubitz.com/bots/banterbot
+#     container: registry
+# trigger:
+#   target:
+#   - production
