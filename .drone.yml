@@ -11,12 +11,15 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
+    environment:
+      TOKEN:
+        from_secret: token
       repo: registry.nathaniallubitz.com/bots/banterbot
       tags:
         - latest
-        - ${DRONE_COMMIT:8}
+        - ${DRONE_COMMIT_SHA:0:8}
     build_args_from_env:
-      - token
+      - TOKEN
     secrets: [token]
     when:
       event:
@@ -28,7 +31,6 @@ steps:
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
     kubernetes_server: https://kube.nathaniallubitz.com
-    tag: ${DRONE_COMMIT:8}
 
 trigger:
   branch:
@@ -45,7 +47,6 @@ steps:
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
     kubernetes_server: https://kube.nathaniallubitz.com
-    tag: ${DRONE_COMMIT:8}
 
 trigger:
   target:
