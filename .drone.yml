@@ -34,7 +34,7 @@ steps:
     deployment: banter-bot
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
-    kubernetes_server: https://kube.nathaniallubitz.com
+    kubernetes_server: http://kube.nathaniallubitz.com
     kubernetes_user: drone
     secrets: [kubernetes_token, kubernetes_cert]
 trigger:
@@ -56,7 +56,7 @@ steps:
     deployment: banter-bot
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
-    kubernetes_server: https://kube.nathaniallubitz.com
+    kubernetes_server: http://kube.nathaniallubitz.com
     kubernetes_user: drone
     secrets: [kubernetes_token, kubernetes_cert]
 
