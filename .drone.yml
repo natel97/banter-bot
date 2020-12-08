@@ -10,14 +10,16 @@ steps:
 
   - name: docker
     image: plugins/docker
+    environment:
+      TOKEN:
+        from_secret: TOKEN
     settings:
       repo: registry.nathaniallubitz.com/bots/banterbot
       tags:
         - latest
         - ${DRONE_COMMIT_SHA:0:8}
-    build_args_from_env:
-      - TOKEN
-    secrets: [token]
+      build_args_from_env:
+        - TOKEN
     when:
       event:
         - push
