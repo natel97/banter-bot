@@ -30,6 +30,7 @@ steps:
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
     kubernetes_server: https://kube.nathaniallubitz.com
+    secrets: [kubernetes_token]
 
 trigger:
   branch:
@@ -46,6 +47,7 @@ steps:
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
     kubernetes_server: https://kube.nathaniallubitz.com
+    secrets: [kubernetes_token]
 
 trigger:
   target:
