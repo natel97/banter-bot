@@ -11,9 +11,6 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-    environment:
-      TOKEN:
-        from_secret: token
       repo: registry.nathaniallubitz.com/bots/banterbot
       tags:
         - latest
