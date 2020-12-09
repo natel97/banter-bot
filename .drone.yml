@@ -48,16 +48,16 @@ name: deploy
 steps:
   - name: Deploy to Kubernetes
     image: quay.io/honestbee/drone-kubernetes
-    environment:
-      KUBERNETES_TOKEN:
-        from_secret: kubernetes_token
-      KUBERNETES_CERT:
-        from_secret: kubernetes_cert
     deployment: banter-bot
     container: banterbot
     repo: registry.nathaniallubitz.com/bots/banterbot
     kubernetes_server: http://kube.nathaniallubitz.com
     kubernetes_user: drone
+    tag: "${DRONE_COMMIT_SHA:0:8}"
+    token:
+      from_secret: kubernetes_token
+    cert:
+      from_secret: kubernetes_cert
     secrets: [kubernetes_token, kubernetes_cert]
 
 trigger:
