@@ -8,7 +8,7 @@ steps:
     commands:
       - yarn test
 
-  - name: docker
+  - name: Docker
     image: plugins/docker
     environment:
       TOKEN:
@@ -37,7 +37,7 @@ steps:
       kubernetes_token:
         from_secret: kubernetes_token
       kubernetes_cert:
-        from_secret: kubernetes_token
+        from_secret: kubernetes_cert
     secrets: [kubernetes_token, kubernetes_cert]
     when:
       event:
@@ -64,7 +64,7 @@ steps:
       kubernetes_token:
         from_secret: kubernetes_token
       kubernetes_cert:
-        from_secret: kubernetes_token
+        from_secret: kubernetes_cert
     secrets: [kubernetes_token, kubernetes_cert]
 
 trigger:
