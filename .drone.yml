@@ -11,6 +11,8 @@ steps:
   - name: Docker
     image: plugins/docker
     environment:
+      BOT_CHANNEL:
+        from_secret: BOT_CHANNEL
       TOKEN:
         from_secret: TOKEN
     settings:
@@ -20,6 +22,7 @@ steps:
         - ${DRONE_COMMIT_SHA:0:8}
       build_args_from_env:
         - TOKEN
+        - BOT_CHANNEL
     when:
       event:
         - push
