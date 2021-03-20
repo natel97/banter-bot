@@ -1,5 +1,5 @@
-import { Client } from "discord.js";
+import { Client } from 'discord.js';
 
 export interface BotFeature {
-    initFeature(client: Client): void;
+  initFeature(client: Client): void;
 }
