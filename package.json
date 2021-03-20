@@ -1,23 +1,37 @@
 {
-    "name": "banter-bot",
-    "version": "0.0.1",
-    "description": "A bot to encourage conversations in Discord",
-    "main": "src/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 0",
-        "start": "node build/index.js",
-        "build": "tsc"
-    },
-    "author": "Nathanial Lubitz",
-    "license": "ISC",
-    "dependencies": {
-        "@discordjs/opus": "^0.3.2",
-        "@octokit/rest": "^18.3.5",
-        "@types/dotenv": "^8.2.0",
-        "@types/node": "^14.14.35",
-        "discord.js": "^12.2.0",
-        "dotenv": "^8.2.0",
-        "typescript": "^4.1.2",
-        "yeehaw-matcher": "^1.0.0"
+  "name": "banter-bot",
+  "version": "0.0.1",
+  "description": "A bot to encourage conversations in Discord",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node build/index.js",
+    "build": "tsc",
+    "prettier": "prettier --write \"**/*.{ts,js,yml,md,json}\""
+  },
+  "author": "Nathanial Lubitz",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "@octokit/rest": "^18.3.5",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.14.35",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "typescript": "^4.1.2",
+    "yeehaw-matcher": "^1.0.0"
+  },
+  "devDependencies": {
+    "husky": "4",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
     }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
 }

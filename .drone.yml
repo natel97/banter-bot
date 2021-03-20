@@ -17,8 +17,8 @@ steps:
         from_secret: TOKEN
       BOT_GITHUB_TOKEN:
         from_secret: BOT_GITHUB_TOKEN
-      REPO_OWNER: "natel97"
-      REPO_REPO: "banter-bot"
+      REPO_OWNER: 'natel97'
+      REPO_REPO: 'banter-bot'
     settings:
       repo: registry.nathaniallubitz.com/bots/banterbot
       tags:
@@ -43,7 +43,7 @@ steps:
       deployment: banter-bot
       container: banterbot
       repo: registry.nathaniallubitz.com/bots/banterbot
-      tag: "${DRONE_COMMIT_SHA:0:8}"
+      tag: '${DRONE_COMMIT_SHA:0:8}'
       kubernetes_token:
         from_secret: kubernetes_token
       kubernetes_cert:
@@ -70,7 +70,7 @@ steps:
       deployment: banter-bot
       container: banterbot
       repo: registry.nathaniallubitz.com/bots/banterbot
-      tag: "${DRONE_COMMIT_SHA:0:8}"
+      tag: '${DRONE_COMMIT_SHA:0:8}'
       kubernetes_token:
         from_secret: kubernetes_token
       kubernetes_cert:

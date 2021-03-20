@@ -1,19 +1,19 @@
 import { Client } from 'discord.js';
-import { BotFeature } from './BotFeature'
+import { BotFeature } from './BotFeature';
 
 export class SoundInChat implements BotFeature {
-    initFeature(client: Client) {
-        client.on("voiceStateUpdate", async (before, after) => {
-            if (before?.member?.id === client?.user?.id) return;
-            if (before.channelID === null && after.channelID) {
-                // Play startup noise :)
-                const connection = await after?.channel?.join();
-                if (!connection) return;
+  initFeature(client: Client) {
+    client.on('voiceStateUpdate', async (before, after) => {
+      if (before?.member?.id === client?.user?.id) return;
+      if (before.channelID === null && after.channelID) {
+        // Play startup noise :)
+        const connection = await after?.channel?.join();
+        if (!connection) return;
 
-                const dispatch = connection.play("new-connection.mp3");
-                dispatch.on("finish", () => connection.disconnect());
-                dispatch.on("error", () => connection.disconnect());
-            }
-        });
-    }
+        const dispatch = connection.play('new-connection.mp3');
+        dispatch.on('finish', () => connection.disconnect());
+        dispatch.on('error', () => connection.disconnect());
+      }
+    });
+  }
 }
