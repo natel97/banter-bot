@@ -46,7 +46,7 @@ async function singleToken(str: string, msg: Message) {
             const members = await msg.guild.members.fetch({ withPresences: true });
             // Trying to only tag people online, but it's an empty array because the presence isn't getting pulled in??
             // console.log({ members: members.toJSON(), matching: members.filter(x => x.presence.status !== 'offline').toJSON(), rando: members.randomKey() })
-            return members/*.filter(x => x.presence.status !== 'offline')*/.randomKey;
+            return members/*.filter(x => x.presence.status !== 'offline')*/.randomKey();
     }
 }
 

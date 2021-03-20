@@ -2,11 +2,6 @@ import { Client, Message } from "discord.js";
 import { BotFeature } from "./BotFeature";
 import { getRandomQuestion, createRandomPoll } from '../Util/Questions';
 
-enum CustomEmojis {
-    YEE = '821810518376972308',
-    HAW = '821810566627590245'
-}
-
 export class Poll implements BotFeature {
     initFeature(client: Client) {
         client.on("message", async (msg) => {
@@ -22,9 +17,6 @@ export class Poll implements BotFeature {
             if (msg.content.toLowerCase().includes("poll us")) {
                 return await createRandomPoll(msg);
             }
-
-            msg.react(CustomEmojis.YEE)
-            msg.react(CustomEmojis.HAW)
         });
     }
     async provokeThoughts(msg: Message) {

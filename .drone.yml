@@ -15,6 +15,10 @@ steps:
         from_secret: BOT_CHANNEL
       TOKEN:
         from_secret: TOKEN
+      BOT_GITHUB_TOKEN:
+        from_secret: BOT_GITHUB_TOKEN
+      REPO_OWNER: "natel97"
+      REPO_REPO: "banter-bot"
     settings:
       repo: registry.nathaniallubitz.com/bots/banterbot
       tags:
@@ -23,6 +27,9 @@ steps:
       build_args_from_env:
         - TOKEN
         - BOT_CHANNEL
+        - BOT_GITHUB_TOKEN
+        - REPO_OWNER
+        - REPO_REPO
     when:
       event:
         - push
