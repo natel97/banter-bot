@@ -19,7 +19,7 @@
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "typescript": "^4.1.2",
-    "yeehaw-matcher": "^1.0.0"
+    "yeehaw-matcher": "^2.0.0"
   },
   "devDependencies": {
     "husky": "4",
