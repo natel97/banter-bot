@@ -4,6 +4,13 @@ import { BotFeature } from './BotFeature';
 import { Octokit } from '@octokit/rest';
 
 export class FeatureRequest implements BotFeature {
+  featureName = 'request-feature';
+  helpText = 'Request a feature on GitHub';
+  exampleCommand = [
+    '@banter-bot request feature ...',
+    '@banter-bot request feature help command',
+  ];
+
   featureRequestCommand = 'request feature ';
   initFeature(client: Client): void {
     const id = client.user?.id;

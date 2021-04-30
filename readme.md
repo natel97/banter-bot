@@ -34,7 +34,7 @@ Ex: If @Josh were a sandwich, which sandwich would they be?
 
 ## Ideas to vet for the future
 
-- Auto posting in a channel if 2 people are in a room (encourage more to join)
+- Auto posting in a channel if 2 people are in a room (encourage more to join), partly implemented
 - Randomly asking people questions
 - Integrating games like hangman or starting up a round of Among Us
 - Birthday announcements

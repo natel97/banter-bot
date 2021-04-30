@@ -3,6 +3,10 @@ import { BotFeature } from './BotFeature';
 import { getRandomQuestion, createRandomPoll } from '../Util/Questions';
 
 export class Poll implements BotFeature {
+  featureName = 'poll';
+  helpText = 'Ask a random question or ask a discussion-starting question';
+  exampleCommand = ['@banter-bot poll us', '@banter-bot provoke our thoughts'];
+
   initFeature(client: Client) {
     client.on('message', async (msg) => {
       const id = client.user?.id;
@@ -19,6 +23,7 @@ export class Poll implements BotFeature {
       }
     });
   }
+
   async provokeThoughts(msg: Message) {
     const randomQuestion = await getRandomQuestion(msg);
     return msg.channel.send(randomQuestion);

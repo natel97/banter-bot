@@ -2,6 +2,10 @@ import { Client, VoiceState, TextChannel } from 'discord.js';
 import { BotFeature } from './BotFeature';
 
 export class MessageOnVoiceChat implements BotFeature {
+  featureName = 'message-on-voice-chat';
+  helpText = 'Get updates when someone enters chat';
+  exampleCommand = [];
+
   initFeature(client: Client): void {
     client.on('voiceStateUpdate', async (before, after) => {
       const channel = await this.getTextChannel(client);
