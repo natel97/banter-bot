@@ -10,8 +10,8 @@ import { YeeHaw } from './YeeHaw';
 export class Features {
   static featurelist: BotFeature[] = [
     new Poll(),
-    new SoundInChat(),
-    new MessageOnVoiceChat(),
+    // new SoundInChat(),
+    // new MessageOnVoiceChat(),
     new UserOnboard(),
     new YeeHaw(),
     new FeatureRequest(),
